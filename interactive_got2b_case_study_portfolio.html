@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>got2b Bold Collective - Strategic Portfolio & Case Study</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Space Grotesk & Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#070a13',
+                        brandCard: '#0f1424',
+                        brandPurple: '#a855f7',
+                        brandPink: '#ec4899',
+                        brandYellow: '#f59e0b',
+                        brandNeonGreen: '#10b981'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070a13;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(15, 20, 36, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-glow-purple {
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+        }
+        .text-glow-pink {
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+        }
+        .glow-card-purple:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+        .glow-card-pink:hover {
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.25);
+            border-color: rgba(236, 72, 153, 0.4);
+        }
+        .glow-card-yellow:hover {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.25);
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.15); }
+        }
+        .radial-glow-purple {
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0,0,0,0) 70%);
+            animation: pulse-slow 8s infinite ease-in-out;
+        }
+        .radial-glow-pink {
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(0,0,0,0) 70%);
+            animation: pulse-slow 12s infinite ease-in-out;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070a13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- Ambient background glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] radial-glow-purple pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] radial-glow-pink pointer-events-none z-0"></div>
+
+    <!-- Candidate Header & Brand Intro (Portfolio Top Section) -->
+    <header class="relative z-10 border-b border-gray-800/60 bg-brandDark/80 backdrop-blur-md sticky top-0 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- Branding -->
+            <div class="flex items-center gap-3">
+                <div class="h-11 w-11 rounded-xl bg-gradient-to-tr from-purple-600 via-pink-500 to-yellow-500 flex items-center justify-center font-bold text-xl heading-font tracking-wider text-white shadow-lg shadow-purple-500/20">
+                    g2b
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight heading-font bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">
+                        got2b Bold Collective
+                    </h1>
+                    <p class="text-[10px] text-gray-400 font-semibold tracking-wider uppercase">Strategic Brand Portfolio & Sandbox Case Study</p>
+                </div>
+            </div>
+
+            <!-- Candidate Metadata Profile Card -->
+            <div class="flex flex-wrap items-center gap-3 bg-brandCard/90 border border-gray-800 rounded-2xl p-2 px-3 shadow-md shadow-black/40">
+                <div class="flex items-center gap-2">
+                    <span class="relative flex h-3.5 w-3.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandNeonGreen opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-brandNeonGreen"></span>
+                    </span>
+                    <div class="text-left">
+                        <span class="block text-xs font-bold text-gray-100 heading-font" id="profile-name">Candidate Name</span>
+                        <span class="block text-[10px] text-gray-400 leading-none">Applicant for Brand Manager</span>
+                    </div>
+                </div>
+                <div class="h-6 w-px bg-gray-800 hidden sm:block"></div>
+                <div class="flex items-center gap-2 text-xs">
+                    <a href="mailto:your.email@example.com" id="profile-email" class="p-1.5 bg-gray-800/80 hover:bg-purple-900/30 text-gray-300 hover:text-purple-300 rounded-lg transition" title="Send Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com" id="profile-linkedin" target="_blank" class="p-1.5 bg-gray-800/80 hover:bg-pink-900/30 text-gray-300 hover:text-pink-300 rounded-lg transition" title="LinkedIn Profile">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <button onclick="openCustomizerModal()" class="px-2.5 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-lg transition text-[10px] flex items-center gap-1">
+                        <i class="fa-solid fa-user-pen"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-6 py-10 space-y-16">
+        
+        <!-- Hero Introduction & Core Concept Summary -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full text-xs text-purple-300 font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-rocket animate-bounce"></i> Next-Gen Brand Architecture
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none heading-font">
+                    Turning Temporary Campaigns into <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent">Permanent Brand Equity</span>
+                </h1>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl">
+                    Every season, got2b launches high-impact activations across gaming, campus activations, and festival communities. While effective, the engagement decays rapidly once these programs conclude. The <strong class="text-white font-semibold">got2b Bold Collective</strong> acts as a permanent, owned catchment basin that turns temporary attention into continuous participation, sustainable UGC, and direct retail trials.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#simulator" class="px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-500 hover:opacity-95 text-white font-bold rounded-xl text-xs transition shadow-lg shadow-purple-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-gamepad"></i> Play Ecosystem Simulator
+                    </a>
+                    <a href="#case-study" class="px-6 py-3 bg-gray-900/90 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 text-gray-300 font-semibold rounded-xl text-xs transition flex items-center gap-2">
+                        <i class="fa-solid fa-file-invoice"></i> Read Case Study Document
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative">
+                <!-- Visualizing the flywheel -->
+                <div class="glass-panel rounded-3xl p-6 border border-purple-900/30 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center aspect-square text-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-pink-900/5 to-transparent"></div>
+                    
+                    <!-- Flywheel core spinner representation -->
+                    <div class="relative h-64 w-64 rounded-full border border-dashed border-purple-500/20 flex items-center justify-center animate-[spin_40s_linear_infinite] mb-4">
+                        <div class="absolute -top-4 bg-purple-600 text-white font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-purple-400">Gamescom</div>
+                        <div class="absolute -bottom-4 bg-pink-600 text-white font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-pink-400">Raves & Festivals</div>
+                        <div class="absolute -left-12 bg-yellow-600 text-white font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-yellow-400">Campus Tours</div>
+                        
+                        <div class="h-44 w-44 rounded-full border border-dashed border-pink-500/30 flex items-center justify-center">
+                            <div class="h-28 w-28 rounded-full bg-gradient-to-tr from-purple-900/80 to-pink-950/80 border border-gray-700 flex items-center justify-center"></div>
+                        </div>
+                    </div>
+
+                    <!-- Centered value tag -->
+                    <div class="absolute top-[40%] text-center px-4 space-y-1">
+                        <span class="block text-[10px] uppercase font-bold text-purple-300 tracking-widest">The Core Bridge</span>
+                        <h3 class="text-xl font-bold heading-font bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Self-Expression</h3>
+                        <p class="text-[10px] text-gray-400 leading-tight">Unifying gamers, students, and fashion lovers in one space.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Interactive Module: The Strategy Simulator Sandbox -->
+        <section id="simulator" class="scroll-mt-24 space-y-6">
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-brandYellow text-xs uppercase font-bold tracking-widest">
+                    <i class="fa-solid fa-chart-line"></i> Strategic Sandbox Play
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font">Ecosystem Simulator</h2>
+                <p class="text-gray-400 text-xs md:text-sm">Compare the ROI of traditional campaign spend against the compounded value of the <strong class="text-purple-400">got2b Bold Collective Flywheel</strong>.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Controller Box -->
+                <div class="lg:col-span-5 glass-panel rounded-2xl p-6 border border-gray-800 space-y-6">
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wide uppercase heading-font pb-3 border-b border-gray-800/80 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-purple-400"></i> Simulation Parameters
+                    </h3>
+
+                    <!-- Choice 1: Campaign Selector -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-semibold text-gray-300 block">Select Activation Channel</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="setCampaign('gamescom')" id="sim-gamescom" class="p-2.5 rounded-xl border bg-brandCard/90 text-center transition text-xs font-semibold flex flex-col items-center gap-1.5 hover:border-purple-500/40 border-purple-500">
+                                <i class="fa-solid fa-gamepad text-purple-400 text-lg"></i> Gamescom
+                            </button>
+                            <button onclick="setCampaign('festivals')" id="sim-festivals" class="p-2.5 rounded-xl border bg-brandCard/90 text-center transition text-xs font-semibold flex flex-col items-center gap-1.5 hover:border-pink-500/40 border-gray-800">
+                                <i class="fa-solid fa-music text-pink-400 text-lg"></i> Festivals
+                            </button>
+                            <button onclick="setCampaign('campus')" id="sim-campus" class="p-2.5 rounded-xl border bg-brandCard/90 text-center transition text-xs font-semibold flex flex-col items-center gap-1.5 hover:border-yellow-500/40 border-gray-800">
+                                <i class="fa-solid fa-graduation-cap text-yellow-400 text-lg"></i> Campus Tour
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Choice 2: Budget slider -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">Target Budget Allocation</span>
+                            <span id="budget-display" class="text-purple-400">€50,000</span>
+                        </div>
+                        <input type="range" min="10000" max="100000" step="5000" value="50000" id="budget-slider" oninput="updateBudget(this.value)" class="w-full accent-purple-500 bg-gray-800 rounded-lg cursor-pointer h-2">
+                        <div class="flex justify-between text-[9px] text-gray-500">
+                            <span>€10,000</span>
+                            <span>€50,000</span>
+                            <span>€100,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Simulation Models Side-by-Side selector / run CTA -->
+                    <button onclick="runSimulation()" class="w-full py-3.5 bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-500 text-white font-bold rounded-xl text-xs transition uppercase tracking-widest shadow-lg shadow-purple-500/20 hover:scale-[1.01] active:scale-100 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-rotate"></i> Run Simulation Analysis
+                    </button>
+                </div>
+
+                <!-- Outputs Dashboard Display -->
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Standard Linear Campaign Card -->
+                    <div class="glass-panel rounded-2xl p-5 border border-red-500/10 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-1">
+                            <div class="inline-flex items-center gap-1 bg-red-500/10 text-red-400 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider">
+                                <i class="fa-solid fa-arrow-trend-down"></i> Traditional Linear Campaign
+                            </div>
+                            <h4 class="text-sm font-bold heading-font text-gray-100">The attention leak model</h4>
+                        </div>
+                        
+                        <div class="space-y-3 py-2">
+                            <!-- Retained Audience metric -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[11px]">
+                                    <span class="text-gray-400">Audience Retained Post-Campaign:</span>
+                                    <span id="trad-retained" class="text-red-400 font-bold">0%</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                    <div id="bar-trad-retained" class="bg-red-500 h-full w-0 transition-all duration-700"></div>
+                                </div>
+                            </div>
+
+                            <!-- LTV representation -->
+                            <div class="flex justify-between items-center text-xs py-1.5 border-t border-gray-800/50">
+                                <span class="text-gray-400">Estimated LTV Generated:</span>
+                                <span id="trad-ltv" class="font-bold text-gray-200">€0.00</span>
+                            </div>
+
+                            <!-- UGC generated -->
+                            <div class="flex justify-between items-center text-xs py-1.5 border-t border-gray-800/50">
+                                <span class="text-gray-400">Original UGC Generated:</span>
+                                <span id="trad-ugc" class="font-bold text-gray-200">0 pieces</span>
+                            </div>
+
+                            <!-- Amortized CAC representation -->
+                            <div class="flex justify-between items-center text-xs py-1.5 border-t border-gray-800/50">
+                                <span class="text-gray-400">Amortized Customer Acquisition Cost:</span>
+                                <span id="trad-cac" class="font-bold text-red-400">High / Leakage</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[10px] text-gray-500 italic leading-snug">
+                            Attention peaks during the launch window, but falls to absolute baseline within 14 days of dismantling the campaign infrastructure.
+                        </p>
+                    </div>
+
+                    <!-- got2b Bold Collective Flywheel Card -->
+                    <div class="glass-panel rounded-2xl p-5 border border-brandNeonGreen/20 space-y-4 flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brandNeonGreen/[0.01] pointer-events-none"></div>
+                        <div class="space-y-1">
+                            <div class="inline-flex items-center gap-1 bg-brandNeonGreen/10 text-brandNeonGreen px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider">
+                                <i class="fa-solid fa-recycle"></i> got2b Bold Collective Ecosystem
+                            </div>
+                            <h4 class="text-sm font-bold heading-font text-gray-100">The compounding value model</h4>
+                        </div>
+                        
+                        <div class="space-y-3 py-2">
+                            <!-- Retained Audience metric -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[11px]">
+                                    <span class="text-gray-400">Audience Retained Post-Campaign:</span>
+                                    <span id="fly-retained" class="text-brandNeonGreen font-bold">45%</span>
+                                </div>
+                                <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                    <div id="bar-fly-retained" class="bg-brandNeonGreen h-full w-[45%] transition-all duration-700"></div>
+                                </div>
+                            </div>
+
+                            <!-- LTV representation -->
+                            <div class="flex justify-between items-center text-xs py-1.5 border-t border-gray-800/50">
+                                <span class="text-gray-400">Estimated LTV Generated:</span>
+                                <span id="fly-ltv" class="font-bold text-brandNeonGreen">€112,500</span>
+                            </div>
+
+                            <!-- UGC generated -->
+                            <div class="flex justify-between items-center text-xs py-1.5 border-t border-gray-800/50">
+                                <span class="text-gray-400">Original UGC Generated:</span>
+                                <span id="fly-ugc" class="font-bold text-gray-200">1,250 pieces</span>
+                            </div>
+
+                            <!-- Amortized CAC representation -->
+                            <div class="flex justify-between items-center text-xs py-1.5 border-t border-gray-800/50">
+                                <span class="text-gray-400">Amortized Customer Acquisition Cost:</span>
+                                <span id="fly-cac" class="font-bold text-brandNeonGreen">Amortized over LTV</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[10px] text-gray-400 italic leading-snug">
+                            Attention is funneled dynamically into the owned ecosystem, allowing subsequent product cycles to re-engage members with €0 programmatic ad spend.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Strategic Slide Deck Summary / The 3 Pillars -->
+        <section id="case-study" class="scroll-mt-24 space-y-8">
+            <div class="text-center space-y-2 max-w-2xl mx-auto">
+                <span class="text-xs text-brandPurple uppercase font-bold tracking-widest">Strategy Breakdown</span>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font">The Bold Collective Ecosystem Blueprint</h2>
+                <p class="text-gray-400 text-xs md:text-sm">Unlike segmented, demographic-focused programs, our design centers purely on unifying creativity and active participation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Pillar 1 -->
+                <div class="glass-panel rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition duration-300 space-y-4 glow-card-purple">
+                    <div class="h-10 w-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                        <i class="fa-solid fa-shapes text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold heading-font text-gray-100">1. Unifying Self-Expression</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Rather than grouping by hobbies like esports, fashion, or festivals, we capture members based on their desire for authentic self-expression. got2b acts as the master connector, bridging different creative groups.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="glass-panel rounded-2xl p-6 border border-pink-500/10 hover:border-pink-500/30 transition duration-300 space-y-4 glow-card-pink">
+                    <div class="h-10 w-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400">
+                        <i class="fa-solid fa-arrows-spin text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold heading-font text-gray-100">2. Monthly Theme Rotations</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Every month has a thematic creative focus (e.g., Cyberpunk Gaming, Festival neon styles, or Campus creative art). Members of all interest pools are encouraged to cross-participate, creating constant community cross-pollination.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-panel rounded-2xl p-6 border border-yellow-500/10 hover:border-yellow-500/30 transition duration-300 space-y-4 glow-card-yellow">
+                    <div class="h-10 w-10 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400">
+                        <i class="fa-solid fa-award text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold heading-font text-gray-100">3. Participation-Based Value</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        This is not a transactional program that only rewards purchases. Members earn points, exclusive product pre-releases, and merchandise by actively creating content, reviewing items, and participating in design votes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Slide Module: The Creator Pathway Deck -->
+        <section class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div class="space-y-2">
+                    <span class="text-xs text-brandPink uppercase font-bold tracking-widest"><i class="fa-solid fa-users-line"></i> Strategic Growth Loops</span>
+                    <h2 class="text-2xl md:text-3xl font-bold heading-font">The Creator Pathway</h2>
+                    <p class="text-gray-400 text-xs md:text-sm">How we turn casual community participants into active got2b co-creation and R&D partners.</p>
+                </div>
+                <!-- Mini controls for slider -->
+                <div class="flex gap-2">
+                    <button onclick="changeCreatorCard(-1)" class="h-10 w-10 bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-lg flex items-center justify-center transition text-gray-300 hover:text-white">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button onclick="changeCreatorCard(1)" class="h-10 w-10 bg-gray-900 hover:bg-gray-800 border border-gray-800 rounded-lg flex items-center justify-center transition text-gray-300 hover:text-white">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative overflow-hidden" id="creator-track-container">
+                <!-- Advocate Card -->
+                <div id="creator-card-0" class="glass-panel rounded-2xl p-6 border-l-4 border-l-purple-500 border border-gray-800/80 hover:border-purple-500/30 transition duration-300 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-bold text-purple-400 uppercase tracking-widest font-mono">Tier 01</span>
+                        <span class="text-[10px] bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full text-purple-300 font-semibold font-mono">Advocate</span>
+                    </div>
+                    <h3 class="text-lg font-bold heading-font text-gray-100">Everyday Community Members</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        The onboarding base layer. Users join through digital and physical brand activations (Gamescom, festivals, campus tours) to style, discuss, and vote in simple monthly challenges.
+                    </p>
+                    <div class="border-t border-gray-800/60 pt-3 text-[11px] space-y-1.5">
+                        <div class="flex justify-between"><span class="text-gray-500">Main Action:</span> <span class="text-gray-300 font-medium">Basic Challenge Participation</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Core Reward:</span> <span class="text-gray-300 font-medium">Community Points & Swag</span></div>
+                    </div>
+                </div>
+
+                <!-- Partner Card -->
+                <div id="creator-card-1" class="glass-panel rounded-2xl p-6 border-l-4 border-l-pink-500 border border-gray-800/80 hover:border-pink-500/30 transition duration-300 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-bold text-pink-400 uppercase tracking-widest font-mono">Tier 02</span>
+                        <span class="text-[10px] bg-pink-500/10 border border-pink-500/20 px-2 py-0.5 rounded-full text-pink-300 font-semibold font-mono">Partner</span>
+                    </div>
+                    <h3 class="text-lg font-bold heading-font text-gray-100">The Micro-Creator Engine</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Active advocates applying for official got2b Creator Partner roles. They are provided direct resources to build highly relatable styling tutorials and lifestyle reviews.
+                    </p>
+                    <div class="border-t border-gray-800/60 pt-3 text-[11px] space-y-1.5">
+                        <div class="flex justify-between"><span class="text-gray-500">Main Action:</span> <span class="text-gray-300 font-medium">Dedicated Styling Content (UGC)</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Core Reward:</span> <span class="text-gray-300 font-medium">Early Product Access & Channel Features</span></div>
+                    </div>
+                </div>
+
+                <!-- Co-Creator Card -->
+                <div id="creator-card-2" class="glass-panel rounded-2xl p-6 border-l-4 border-l-yellow-500 border border-gray-800/80 hover:border-yellow-500/30 transition duration-300 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-bold text-yellow-400 uppercase tracking-widest font-mono">Tier 03</span>
+                        <span class="text-[10px] bg-yellow-500/10 border border-yellow-500/20 px-2 py-0.5 rounded-full text-yellow-300 font-semibold font-mono">Co-Creator</span>
+                    </div>
+                    <h3 class="text-lg font-bold heading-font text-gray-100">Elite Brand Innovators</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Top-tier micro-creators who integrate with the got2b brand team. They bypass traditional trend agencies, proposing packaging designs and styles directly to the innovation lab.
+                    </p>
+                    <div class="border-t border-gray-800/60 pt-3 text-[11px] space-y-1.5">
+                        <div class="flex justify-between"><span class="text-gray-500">Main Action:</span> <span class="text-gray-300 font-medium">Product / Campaign Ideation Workshops</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Core Reward:</span> <span class="text-gray-300 font-medium">Strategic Seat & Co-Design Rights</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Pilot Execution, Localization Mapping and Phased Launch -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs text-purple-400 uppercase font-bold tracking-widest">Pilot Launch Plan</span>
+                    <h2 class="text-2xl md:text-3xl font-bold heading-font">Risk-Managed Testing in Germany</h2>
+                    <p class="text-gray-400 text-xs md:text-sm">
+                        True communities are built organically to prevent dilution of culture and trust. We propose a focused launch with **500 core members** in high-density cultural hubs across Germany.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex gap-3 items-start">
+                        <div class="h-6 w-6 rounded bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-300 font-bold font-mono text-xs">C</div>
+                        <div>
+                            <strong class="text-gray-200 text-xs block">Cologne (The Gaming Epicenter)</strong>
+                            <p class="text-gray-400 text-[11px]">Direct integration point with Gamescom visitors to capture physical traffic digitally.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="h-6 w-6 rounded bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-300 font-bold font-mono text-xs">B</div>
+                        <div>
+                            <strong class="text-gray-200 text-xs block">Berlin (The Festival Hub)</strong>
+                            <p class="text-gray-400 text-[11px]">Alternative scene connection to onboard creative, expressive beauty and styling partners.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="h-6 w-6 rounded bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-300 font-bold font-mono text-xs">U</div>
+                        <div>
+                            <strong class="text-gray-200 text-xs block">Munich & Major University Hubs</strong>
+                            <p class="text-gray-400 text-[11px]">Onboarding campus creative advocates via integrated styling tours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stylized CSS Interactive Hub Selector -->
+            <div class="lg:col-span-7">
+                <div class="glass-panel rounded-2xl p-6 border border-gray-800 space-y-6 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/5 to-transparent"></div>
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-800/80">
+                        <h4 class="text-sm font-bold heading-font text-gray-200 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-pink-500"></i> Localized Pilot Hub Nodes
+                        </h4>
+                        <span class="text-[10px] bg-brandNeonGreen/10 border border-brandNeonGreen/20 px-2.5 py-0.5 rounded-full text-brandNeonGreen font-bold font-mono">Germany Pilot Target: 500 Members</span>
+                    </div>
+
+                    <!-- Hub interactive click points -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div onclick="selectHub('cologne')" id="hub-cologne" class="p-4 bg-brandCard/90 border border-purple-500 rounded-xl cursor-pointer transition text-left space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-gray-200">Cologne Hub</span>
+                                <span class="h-2 w-2 rounded-full bg-purple-500"></span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 leading-snug">Capturing Gamescom and esports event audience value.</p>
+                        </div>
+
+                        <div onclick="selectHub('berlin')" id="hub-berlin" class="p-4 bg-brandCard/90 border border-gray-800 rounded-xl cursor-pointer transition text-left space-y-2 hover:border-pink-500/40">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-gray-200">Berlin Hub</span>
+                                <span class="h-2 w-2 rounded-full bg-pink-500"></span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 leading-snug">Integrating alternative styles and rave-themed festivals.</p>
+                        </div>
+
+                        <div onclick="selectHub('university')" id="hub-university" class="p-4 bg-brandCard/90 border border-gray-800 rounded-xl cursor-pointer transition text-left space-y-2 hover:border-yellow-500/40">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-gray-200">Campus Hubs</span>
+                                <span class="h-2 w-2 rounded-full bg-yellow-500"></span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 leading-snug">Targeting major university networks with styling tours.</p>
+                        </div>
+                    </div>
+
+                    <!-- Live dynamic description box based on click -->
+                    <div id="hub-detail-box" class="p-4 bg-gray-950/60 border border-gray-800/80 rounded-xl text-xs space-y-1 transition duration-300">
+                        <strong class="text-purple-400 block" id="hub-detail-title">Currently Selected: Cologne Hub (Gaming EPICENTER)</strong>
+                        <p class="text-gray-400" id="hub-detail-desc">
+                            We deploy targeted QR check-ins during Gamescom within digital hair styling booths. Users checking in earn immediate exclusive early-access avatar styling kits, converting a temporary footfall of gamers into registered permanent digital members.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Performance Dashboard Simulation Section -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <span class="text-xs text-brandNeonGreen uppercase font-bold tracking-widest"><i class="fa-solid fa-chart-line"></i> Unifying Brand & Financial Value</span>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font">The Dual-Track Metric Dashboard</h2>
+                <p class="text-gray-400 text-xs md:text-sm">We don't measure success strictly through fluffy vanity metrics. We split performance indicators into twin tracks: Relationship Health vs. Commercial Conversions.</p>
+            </div>
+
+            <!-- Toggles for metrics display -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Track 1: Community Metrics -->
+                <div class="glass-panel rounded-2xl p-6 border border-purple-500/10 space-y-4">
+                    <h3 class="text-sm font-bold text-purple-400 tracking-wide uppercase heading-font flex items-center gap-2">
+                        <i class="fa-solid fa-users"></i> Track 1: Community Metrics
+                    </h3>
+                    <p class="text-xs text-gray-400 leading-snug">These indicators measure the health, active creativity, and qualitative relationship depth of our platform members.</p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <!-- Metric 1 -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-300 font-semibold">User-Generated Content Volume (UGC)</span>
+                                <span class="text-purple-400 font-bold font-mono">1,200+ pieces</span>
+                            </div>
+                            <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-purple-500 h-full w-[80%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Metric 2 -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-300 font-semibold">Active Challenges Participation Rate</span>
+                                <span class="text-purple-400 font-bold font-mono">68% Monthly active</span>
+                            </div>
+                            <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-purple-500 h-full w-[68%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Metric 3 -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-300 font-semibold">MoM Member Retention Rate</span>
+                                <span class="text-purple-400 font-bold font-mono">82% Retained</span>
+                            </div>
+                            <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-purple-500 h-full w-[82%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2: Commercial Metrics -->
+                <div class="glass-panel rounded-2xl p-6 border border-brandNeonGreen/10 space-y-4">
+                    <h3 class="text-sm font-bold text-brandNeonGreen tracking-wide uppercase heading-font flex items-center gap-2">
+                        <i class="fa-solid fa-basket-shopping"></i> Track 2: Commercial Metrics
+                    </h3>
+                    <p class="text-xs text-gray-400 leading-snug">These metrics connect our community actions straight to Henkel's bottom line and physical store retail checkout value.</p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <!-- Metric 1 -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-300 font-semibold">Product Trial Request Rate</span>
+                                <span class="text-brandNeonGreen font-bold font-mono">92% Claim Rate</span>
+                            </div>
+                            <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-brandNeonGreen h-full w-[92%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Metric 2 -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-300 font-semibold">Digital-to-Retail Coupon Redemption</span>
+                                <span class="text-brandNeonGreen font-bold font-mono">34% Checkout Rate</span>
+                            </div>
+                            <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-brandNeonGreen h-full w-[34%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Metric 3 -->
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-gray-300 font-semibold">Creator-Driven Sales Conversions</span>
+                                <span class="text-brandNeonGreen font-bold font-mono">12% direct affiliate</span>
+                            </div>
+                            <div class="w-full bg-gray-900 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-brandNeonGreen h-full w-[40%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Strategic Close Question & Recruiter Call-To-Action (CTA) -->
+        <section class="glass-panel rounded-3xl p-8 border border-purple-500/20 glow-card-purple relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-purple-900/10 via-brandDark to-transparent pointer-events-none"></div>
+            
+            <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+                <span class="text-xs text-brandYellow uppercase font-bold tracking-widest"><i class="fa-solid fa-circle-question"></i> The Strategic Close Question</span>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font leading-tight">
+                    "Is the team currently looking to build owned community assets, or is the focus on standalone campaigns?"
+                </h2>
+                <p class="text-gray-400 text-xs md:text-sm">
+                    This proposal is designed to unify got2b's temporary marketing efforts into a centralized, permanent brand powerhouse. I would love to join your team to plan, build, and scale this model from pilot to global launch.
+                </p>
+
+                <!-- Recruiter Contact Dynamic Form/Button Hub -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openRecruiterContactModal()" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-500 text-white font-bold rounded-xl text-xs uppercase tracking-widest transition shadow-lg shadow-purple-500/20 hover:scale-[1.01] flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-calendar-check"></i> Request Interview Meeting
+                    </button>
+                    <a href="mailto:your.email@example.com" id="profile-mail-cta" class="w-full sm:w-auto px-8 py-4 bg-gray-900/90 border border-gray-800 hover:border-gray-700 text-gray-300 hover:text-white font-bold rounded-xl text-xs uppercase tracking-widest transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-envelope"></i> Send Email Direct
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Customizer Modal for Applicant (Allows custom inputs) -->
+    <div id="customizer-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-brandCard border border-gray-800 w-full max-w-md rounded-2xl p-6 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+                <h3 class="text-sm font-bold text-gray-200 heading-font uppercase">Personalize This Web Application</h3>
+                <button onclick="closeCustomizerModal()" class="text-gray-400 hover:text-gray-100"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="space-y-3 text-xs">
+                <div class="space-y-1">
+                    <label class="text-gray-400 font-semibold block">Your Name</label>
+                    <input type="text" id="input-name" placeholder="John Doe" class="w-full p-2.5 rounded-lg bg-gray-950 border border-gray-800 text-gray-100 focus:outline-none focus:border-purple-500">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-gray-400 font-semibold block">Your Email</label>
+                    <input type="email" id="input-email" placeholder="john.doe@example.com" class="w-full p-2.5 rounded-lg bg-gray-950 border border-gray-800 text-gray-100 focus:outline-none focus:border-purple-500">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-gray-400 font-semibold block">LinkedIn Profile URL</label>
+                    <input type="url" id="input-linkedin" placeholder="https://linkedin.com/in/johndoe" class="w-full p-2.5 rounded-lg bg-gray-950 border border-gray-800 text-gray-100 focus:outline-none focus:border-purple-500">
+                </div>
+            </div>
+
+            <button onclick="saveCustomizations()" class="w-full py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold rounded-xl text-xs transition uppercase tracking-wider">
+                Apply Custom Details
+            </button>
+        </div>
+    </div>
+
+    <!-- Recruiter Contact Mock Success Modal -->
+    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-brandCard border border-gray-800 w-full max-w-md rounded-2xl p-6 text-center space-y-4 shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-brandNeonGreen/[0.02] pointer-events-none"></div>
+            <div class="h-12 w-12 rounded-full bg-brandNeonGreen/10 border border-brandNeonGreen/20 flex items-center justify-center text-brandNeonGreen mx-auto text-xl">
+                <i class="fa-regular fa-circle-check"></i>
+            </div>
+            
+            <div class="space-y-1">
+                <h3 class="text-lg font-bold text-gray-100 heading-font">Simulating Interview Request</h3>
+                <p class="text-gray-400 text-xs">This action simulates a direct portfolio trigger. Click confirm to draft an automated email invite for <span class="text-purple-400 font-semibold" id="contact-pname">this candidate</span>.</p>
+            </div>
+
+            <div class="flex gap-2">
+                <button onclick="closeRecruiterContactModal()" class="w-1/2 py-2 bg-gray-900 border border-gray-800 hover:bg-gray-800 rounded-xl text-xs font-semibold text-gray-300 transition">Cancel</button>
+                <button onclick="triggerEmailDraft()" class="w-1/2 py-2 bg-brandNeonGreen text-brandDark font-bold rounded-xl text-xs transition">Confirm & Draft Email</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripting for interactivity -->
+    <script>
+        // State storage
+        let selectedCampaign = 'gamescom';
+        let currentBudget = 50000;
+        let currentCreatorIdx = 0;
+
+        // Base metrics configurations for simulation
+        const campaignConfigs = {
+            gamescom: {
+                title: "Gamescom Cologne Booth",
+                baseUgcRate: 0.025, // UGC per euro
+                baseFlywheelLtvMultiplier: 2.25, // LTV multiplier on budget
+                flywheelAudienceRetained: 45,
+                tradAudienceRetained: 2
+            },
+            festivals: {
+                title: "Summer Rave Festival Pop-up",
+                baseUgcRate: 0.035, // High UGC density
+                baseFlywheelLtvMultiplier: 2.50,
+                flywheelAudienceRetained: 50,
+                tradAudienceRetained: 4
+            },
+            campus: {
+                title: "Campus Styling Tour",
+                baseUgcRate: 0.015,
+                baseFlywheelLtvMultiplier: 1.80,
+                flywheelAudienceRetained: 38,
+                tradAudienceRetained: 1
+            }
+        };
+
+        // Hub detailing content dictionary
+        const hubDetails = {
+            cologne: {
+                title: "Cologne Hub (Gaming Epicenter)",
+                desc: "We deploy targeted QR check-ins during Gamescom within digital hair styling booths. Users checking in earn immediate exclusive early-access avatar styling kits, converting a temporary footfall of gamers into registered permanent digital members."
+            },
+            berlin: {
+                title: "Berlin Hub (Alternative Scene / Festival)",
+                desc: "Connecting directly with Berlin's alternative electronic music scene and youth festivals. Pop-up styling bars issue exclusive 'Bold Passports', where members earn permanent points for sharing neon and futuristic aesthetic styled-up looks."
+            },
+            university: {
+                title: "Campus Hubs (Student Stylists)",
+                desc: "Partnering with university networks across Germany. Local styling trucks onboard student advocates via localized styling competitions, linking campus tours straight into continuous monthly creative campus challenges."
+            }
+        };
+
+        // Load customizable parameters from localStorage
+        window.onload = function() {
+            const savedName = localStorage.getItem('got2b_app_name') || 'Your Name';
+            const savedEmail = localStorage.getItem('got2b_app_email') || 'your.email@example.com';
+            const savedLinkedin = localStorage.getItem('got2b_app_linkedin') || 'https://linkedin.com';
+
+            updateProfileDisplay(savedName, savedEmail, savedLinkedin);
+            
+            // Run an initial simulation on load
+            runSimulation();
+        }
+
+        function updateProfileDisplay(name, email, linkedin) {
+            document.getElementById('profile-name').innerText = name;
+            document.getElementById('profile-email').href = `mailto:${email}`;
+            document.getElementById('profile-linkedin').href = linkedin;
+            
+            // Sync values to customization inputs
+            document.getElementById('input-name').value = name === 'Your Name' ? '' : name;
+            document.getElementById('input-email').value = email === 'your.email@example.com' ? '' : email;
+            document.getElementById('input-linkedin').value = linkedin === 'https://linkedin' ? '' : linkedin;
+
+            // Sync email CTA
+            document.getElementById('profile-mail-cta').href = `mailto:${email}?subject=got2b%20Bold%20Collective%20-%20Interview%20Request`;
+        }
+
+        function setCampaign(campId) {
+            // Update active state
+            document.querySelectorAll('[id^="sim-"]').forEach(btn => {
+                btn.classList.remove('border-purple-500', 'border-pink-500', 'border-yellow-500');
+                btn.classList.add('border-gray-800');
+            });
+
+            selectedCampaign = campId;
+            const btn = document.getElementById(`sim-${campId}`);
+            
+            // Add custom visual color indicator based on theme colors
+            if (campId === 'gamescom') btn.classList.add('border-purple-500');
+            if (campId === 'festivals') btn.classList.add('border-pink-500');
+            if (campId === 'campus') btn.classList.add('border-yellow-500');
+
+            runSimulation();
+        }
+
+        function updateBudget(val) {
+            currentBudget = parseInt(val);
+            document.getElementById('budget-display').innerText = '€' + currentBudget.toLocaleString();
+            runSimulation();
+        }
+
+        // Core business logic dynamic calculator
+        function runSimulation() {
+            const config = campaignConfigs[selectedCampaign];
+            
+            // Calculating standard traditional metrics
+            const tradLtvVal = Math.round(currentBudget * 0.15); // Minimal LTV leak
+            const tradUgcCount = Math.round(currentBudget * 0.002); // Minimal UGC rate
+
+            // Calculating flywheel compounding metrics
+            const flyLtvVal = Math.round(currentBudget * config.baseFlywheelLtvMultiplier);
+            const flyUgcCount = Math.round(currentBudget * config.baseUgcRate);
+
+            // Animate values/bars
+            document.getElementById('trad-retained').innerText = config.tradAudienceRetained + '%';
+            document.getElementById('bar-trad-retained').style.width = config.tradAudienceRetained + '%';
+            document.getElementById('trad-ltv').innerText = '€' + tradLtvVal.toLocaleString();
+            document.getElementById('trad-ugc').innerText = tradUgcCount.toLocaleString() + ' pieces';
+
+            document.getElementById('fly-retained').innerText = config.flywheelAudienceRetained + '%';
+            document.getElementById('bar-fly-retained').style.width = config.flywheelAudienceRetained + '%';
+            document.getElementById('fly-ltv').innerText = '€' + flyLtvVal.toLocaleString();
+            document.getElementById('fly-ugc').innerText = flyUgcCount.toLocaleString() + ' pieces';
+        }
+
+        // Slider logic for creator deck cards (for mobile/tablet support)
+        function changeCreatorCard(direction) {
+            currentCreatorIdx += direction;
+            if (currentCreatorIdx < 0) currentCreatorIdx = 2;
+            if (currentCreatorIdx > 2) currentCreatorIdx = 0;
+
+            // Slide out of view logic representation via toggled opacity or positions
+            const container = document.getElementById('creator-track-container');
+            const cards = container.children;
+
+            // Highlight chosen index for mobile focus
+            for(let i=0; i<cards.length; i++) {
+                if (i === currentCreatorIdx) {
+                    cards[i].classList.remove('opacity-40', 'scale-95');
+                    cards[i].classList.add('border-purple-500/40', 'scale-100');
+                    cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    cards[i].classList.add('opacity-40', 'scale-95');
+                }
+            }
+        }
+
+        // Map node interactive helper
+        function selectHub(hubId) {
+            document.querySelectorAll('[id^="hub-"]').forEach(node => {
+                node.classList.remove('border-purple-500', 'border-pink-500', 'border-yellow-500');
+                node.classList.add('border-gray-800');
+            });
+
+            const targetNode = document.getElementById(`hub-${hubId}`);
+            const data = hubDetails[hubId];
+
+            if (hubId === 'cologne') targetNode.classList.add('border-purple-500');
+            if (hubId === 'berlin') targetNode.classList.add('border-pink-500');
+            if (hubId === 'university') targetNode.classList.add('border-yellow-500');
+
+            // Trigger smooth change of content box
+            const boxTitle = document.getElementById('hub-detail-title');
+            const boxDesc = document.getElementById('hub-detail-desc');
+            
+            boxTitle.style.opacity = 0;
+            boxDesc.style.opacity = 0;
+
+            setTimeout(() => {
+                boxTitle.innerText = data.title;
+                boxDesc.innerText = data.desc;
+                
+                // Add appropriate text color styling based on hub focus
+                boxTitle.className = '';
+                if (hubId === 'cologne') boxTitle.className = 'text-purple-400 font-bold block';
+                if (hubId === 'berlin') boxTitle.className = 'text-pink-400 font-bold block';
+                if (hubId === 'university') boxTitle.className = 'text-yellow-400 font-bold block';
+
+                boxTitle.style.opacity = 1;
+                boxDesc.style.opacity = 1;
+            }, 150);
+        }
+
+        // Modals management functions
+        function openCustomizerModal() {
+            document.getElementById('customizer-modal').classList.remove('hidden');
+        }
+
+        function closeCustomizerModal() {
+            document.getElementById('customizer-modal').classList.add('hidden');
+        }
+
+        function saveCustomizations() {
+            const name = document.getElementById('input-name').value || 'Your Name';
+            const email = document.getElementById('input-email').value || 'your.email@example.com';
+            const linkedin = document.getElementById('input-linkedin').value || 'https://linkedin.com';
+
+            localStorage.setItem('got2b_app_name', name);
+            localStorage.setItem('got2b_app_email', email);
+            localStorage.setItem('got2b_app_linkedin', linkedin);
+
+            updateProfileDisplay(name, email, linkedin);
+            closeCustomizerModal();
+        }
+
+        function openRecruiterContactModal() {
+            const candidateName = localStorage.getItem('got2b_app_name') || 'this candidate';
+            document.getElementById('contact-pname').innerText = candidateName;
+            document.getElementById('contact-modal').classList.remove('hidden');
+        }
+
+        function closeRecruiterContactModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+        }
+
+        // Simulated action generating draft email template inside client's local platform
+        function triggerEmailDraft() {
+            const email = localStorage.getItem('got2b_app_email') || 'your.email@example.com';
+            const name = localStorage.getItem('got2b_app_name') || 'Candidate';
+            
+            const mailtoLink = `mailto:${email}?subject=Invitation%20to%20Interview%20-%20got2b%20Brand%20Manager%20Role&body=Hi%20${encodeURIComponent(name)},%0D%0A%0D%0AI%20reviewed%20your%20interactive%20'got2b%20Bold%20Collective'%20case%20study%20website%20and%20was%20impressed%20by%20the%20strategic%20thinking%20and%20your%20interactive%20simulator.%20%0D%0A%0D%0AI%20would%20love%20to%20invite%20you%20for%20a%20first-round%20call%20to%20discuss%20your%20portfolio%20details.%20What%20days%20are%20you%20available%20next%20week?%0D%0A%0D%0ABest%20regards,%0D%0A[Hiring Manager Name]%0D%0A[Henkel / got2b Brand Team]`;
+            
+            window.open(mailtoLink, '_blank');
+            closeRecruiterContactModal();
+        }
+    </script>
+</body>
+</html>
